@@ -1,5 +1,5 @@
 
-const API_URL = "https://mental-health-check-1-hq0k.onrender.com";
+const API_URL = "https://mental-health-check-1-hq0k.onrender.com/predict";
 
 const form = document.getElementById("predictionForm");
 const predictBtn = document.getElementById("predictBtn");
