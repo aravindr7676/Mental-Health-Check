@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindScope | Digital Wellbeing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+    <a class="brand" href="#"><span class="brand-icon">♡</span> mind<span>scope</span></a>
+    <div class="nav-status"><i></i> Personal wellbeing insights <b>AI POWERED</b></div>
+</header>
+
+<main class="shell">
+    <section class="hero">
+        <div>
+            <div class="eyebrow">✦ &nbsp; A LITTLE MORE AWARE, EVERY DAY</div>
+            <h1>Your habits tell a story.<br><em>Let’s understand it.</em></h1>
+            <p>Explore how your social media habits, study routine, sleep and everyday activity relate to your predicted mental health score.</p>
+            <div class="hero-points">
+                <span>✓ Personalized estimate</span>
+                <span>✓ Simple and easy to use</span>
+            </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-a"></div>
+            <div class="orbit orbit-b"></div>
+            <div class="heart">♡</div>
+            <div class="float-star">✦</div>
+            <div class="float-chip"><i></i> Mindful moments matter</div>
+        </div>
+    </section>
+
+    <section class="workspace">
+        <section class="form-card">
+            <div class="card-heading">
+                <div>
+                    <div class="overline">YOUR PROFILE</div>
+                    <h2>Check in with yourself</h2>
+                    <p>Share a few details about your typical day.</p>
+                </div>
+                <div class="step"><b>01</b> / 01</div>
+            </div>
+
+            <form id="predictionForm">
+                <div class="section-heading">
+                    <span class="section-icon">◎</span>
+                    <div><h3>About you</h3><p>Help us understand your context</p></div>
+                </div>
+
+                <div class="fields">
+                    <label>Age <b>*</b>
+                        <input type="number" name="Age" min="10" max="100" value="22" required>
+                    </label>
+
+                    <label>Gender <b>*</b>
+                        <select name="Gender" required>
+                            <option>Male</option><option>Female</option>
+                        </select>
+                    </label>
+
+                    <label>Country <b>*</b>
+                        <input type="text" name="Country" list="countries" value="India" required>
+                        <datalist id="countries">
+                            <option value="India"><option value="USA">
+                            <option value="Canada"><option value="Australia">
+                            <option value="UK"><option value="Germany">
+                            <option value="Mexico"><option value="Turkey">
+                            <option value="France"><option value="Other">
+                        </datalist>
+                    </label>
+
+                    <label>Academic level <b>*</b>
+                        <select name="Academic_Level" required>
+                            <option>Undergraduate</option>
+                            <option>Graduate</option>
+                            <option>High School</option>
+                        </select>
+                    </label>
+
+                    <label>Most-used platform <b>*</b>
+                        <select name="Most_Used_Platform" required>
+                            <option>Instagram</option><option>Facebook</option>
+                            <option>LinkedIn</option><option>Snapchat</option>
+                            <option>Twitter</option><option>YouTube</option>
+                            <option>TikTok</option><option>LINE</option>
+                            <option>KakaoTalk</option><option>VKontakte</option>
+                            <option>WhatsApp</option><option>WeChat</option>
+                        </select>
+                    </label>
+
+                    <label>Purpose of use <b>*</b>
+                        <select name="Purpose_Of_Use" required>
+                            <option>Networking</option><option>Education</option>
+                            <option>Entertainment</option><option>News</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="section-heading second">
+                    <span class="section-icon">◷</span>
+                    <div><h3>Your daily rhythm</h3><p>Estimate your average day and night</p></div>
+                </div>
+
+                <div class="fields">
+                    <label>Social media usage <b>*</b>
+                        <div class="unit">
+                            <input type="number" name="Avg_Daily_Usage_Hours" min="0" max="24" step="0.5" value="3" required>
+                            <span>hrs/day</span>
+                        </div>
+                    </label>
+
+                    <label>Daily phone unlocks <b>*</b>
+                        <input type="number" name="Daily_Unlocks" min="0" step="1" value="50" required>
+                    </label>
+
+                    <label>Study hours <b>*</b>
+                        <div class="unit">
+                            <input type="number" name="Study_Hours" min="0" max="24" step="0.5" value="4" required>
+                            <span>hrs/day</span>
+                        </div>
+                    </label>
+
+                    <label>Physical activity <b>*</b>
+                        <div class="unit">
+                            <input type="number" name="Physical_Activity_Hours" min="0" max="2" step="0.25" value="1" required>
+                            <span>hrs/day</span>
+                        </div>
+                    </label>
+
+                    <label>Sleep per night <b>*</b>
+                        <div class="unit">
+                            <input type="number" name="Sleep_Hours_Per_Night" min="0" max="24" step="0.5" value="7" required>
+                            <span>hrs/night</span>
+                        </div>
+                    </label>
+
+                    <label>Stress level <b>*</b>
+                        <select name="Stress_Level" required>
+                            <option>Low</option><option selected>Medium</option>
+                            <option>High</option><option>Very High</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <p><b>*</b> All fields are required</p>
+                    <button type="submit" id="predictBtn">
+                        <span id="buttonText">Generate my insight</span>
+                        <span class="arrow">↗</span>
+                        <span class="spinner"></span>
+                    </button>
+                </div>
+                <p id="errorMessage" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <aside class="result-card" id="resultCard">
+            <div class="result-top">
+                <span class="sparkle">✧</span> YOUR INSIGHT
+                <span class="ready"><i></i> READY</span>
+            </div>
+
+            <div class="result-intro">
+                <h2>Make space for<br><em>self-awareness.</em></h2>
+                <p>Your prediction will appear here after you submit your profile.</p>
+            </div>
+
+            <div class="score-panel">
+                <div class="score-label">PREDICTED MENTAL HEALTH SCORE</div>
+                <div class="score" id="score">—<small>score</small></div>
+                <div class="meter"><div id="progressBar"></div></div>
+                <p id="resultMessage">Waiting for your first prediction</p>
+            </div>
+
+            <div class="benefit">
+                <span>↗</span>
+                <div><b>Model-generated estimate</b><p>Calculated from your submitted details.</p></div>
+            </div>
+            <div class="benefit">
+                <span>♡</span>
+                <div><b>A moment to reflect</b><p>Use the result as a starting point for awareness.</p></div>
+            </div>
+
+            <div class="notice">ⓘ <p>This AI prediction is not a medical diagnosis or a substitute for professional care.</p></div>
+            <button type="button" class="reset" id="resetBtn">↻ &nbsp; Reset result</button>
+        </aside>
+    </section>
+
+    <footer>
+        <b>MINDSCOPE <i>·</i> DIGITAL WELLBEING</b>
+        <span>Built for a more mindful digital life.</span>
+    </footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
