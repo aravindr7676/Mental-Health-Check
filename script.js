@@ -1,5 +1,5 @@
 
-const API_URL = "http://127.0.0.1:8000/predict";
+const API_URL = "https://mental-health-check-1-hq0k.onrender.com";
 
 const form = document.getElementById("predictionForm");
 const predictBtn = document.getElementById("predictBtn");
